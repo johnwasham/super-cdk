@@ -1,5 +1,6 @@
 {
   "app": "npx ts-node --prefer-ts-exts bin/super_service.ts",
+  "profile": "cdk-2026",
   "watch": {
     "include": [
       "**"
