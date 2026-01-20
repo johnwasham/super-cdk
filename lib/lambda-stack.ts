@@ -12,7 +12,7 @@ export class LambdaStack extends Stack {
             runtime: Runtime.NODEJS_20_X,
             handler: 'handler.handler',
             code: Code.fromAsset(path.join(__dirname, 'lambda')),
-            environment: {stageName: stageName}
+            environment: {stage: stageName}
         });
     }
 }
