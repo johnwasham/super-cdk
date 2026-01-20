@@ -1,0 +1,20 @@
+{
+  "version": "36.0.0",
+  "files": {
+    "d56f9e5083ef652ba0cd2f7aece2ee019418ca46eec276fd94d1316bca953adf": {
+      "source": {
+        "path": "SuperServiceStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "418052138440-us-west-1": {
+          "bucketName": "cdk-hnb659fds-assets-418052138440-us-west-1",
+          "objectKey": "d56f9e5083ef652ba0cd2f7aece2ee019418ca46eec276fd94d1316bca953adf.json",
+          "region": "us-west-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::418052138440:role/cdk-hnb659fds-file-publishing-role-418052138440-us-west-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

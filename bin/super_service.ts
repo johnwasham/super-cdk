@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { SuperServiceStack } from '../lib/super_service-stack';
-import { PipelineStack } from '../lib/pipeline-stack';
+// import { SuperServiceStack } from '../lib/super_service-stack';
+import { SuperPipelineStack } from '../lib/super_pipeline-stack';
 
 const app = new cdk.App();
 
@@ -11,7 +11,7 @@ if (!accountId) {
   throw new Error('CDK_ACCOUNT_ID environment variable is not set');
 }
 
-new SuperServiceStack(app, 'SuperServiceStack', {
+new SuperPipelineStack(app, 'SuperServiceStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */

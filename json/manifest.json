@@ -1,0 +1,71 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "SuperServiceStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "SuperServiceStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "SuperServiceStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://418052138440/us-west-1",
+      "properties": {
+        "templateFile": "SuperServiceStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::418052138440:role/cdk-hnb659fds-deploy-role-418052138440-us-west-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::418052138440:role/cdk-hnb659fds-cfn-exec-role-418052138440-us-west-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-418052138440-us-west-1/d56f9e5083ef652ba0cd2f7aece2ee019418ca46eec276fd94d1316bca953adf.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "SuperServiceStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::418052138440:role/cdk-hnb659fds-lookup-role-418052138440-us-west-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "SuperServiceStack.assets"
+      ],
+      "metadata": {
+        "/SuperServiceStack/SomeQueue/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SomeQueueCDEC7CFA"
+          }
+        ],
+        "/SuperServiceStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/SuperServiceStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/SuperServiceStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "SuperServiceStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
