@@ -24,6 +24,7 @@ export class SuperPipelineStack extends Stack {
             env: { account: "418052138440", region: "us-west-1" }
         }));
 
+        betaStage.addPre(new ShellStep("Run Unit Tests", { commands: ['npm install', 'npm test'] }));
         betaStage.addPost(new ManualApprovalStep("Manual approval required."));
 
         const prodState = pipeline.addStage(new SuperAppStage(this, "prod", {
